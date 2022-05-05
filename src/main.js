@@ -1,3 +1,11 @@
-console.log('Hello webpack');
+import './styles/main.scss';
 
-console.log(3)
+const x = 0;
+
+async function test() {
+  await 1;
+}
+
+test();
+
+console.log(3);
