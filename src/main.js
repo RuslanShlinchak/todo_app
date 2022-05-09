@@ -1,11 +1,16 @@
+import 'tw-elements';
 import './styles/main.scss';
 
-const x = 0;
+import App from './scripts/App';
 
-async function test() {
-  await 1;
-}
+const registerScreenEl = document.getElementById('register-screen');
+const loginScreenEl = document.getElementById('login-screen');
+const registerLinkEl = document.getElementById('register-link');
 
-test();
+registerLinkEl.addEventListener('click', () => {
+  loginScreenEl.style.display = 'none';
+  registerScreenEl.style.display = 'flex';
+})
 
-console.log(3);
+
+const app = new App();
