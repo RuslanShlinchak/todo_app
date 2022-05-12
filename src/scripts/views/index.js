@@ -1,0 +1,1 @@
+export { default as AuthView } from './Auth.view';

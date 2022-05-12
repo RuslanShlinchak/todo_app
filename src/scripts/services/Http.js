@@ -10,11 +10,12 @@ const fetcher = async ({
 }) => {
   try {
     const path = BASE_URL + url;
-    await fetch(path, {
+    const response = await fetch(path, {
       body: JSON.stringify(body),
       headers,
       method
     })
+    return await response.json();
   } catch (error) {
     console.log(error);
     throw error;

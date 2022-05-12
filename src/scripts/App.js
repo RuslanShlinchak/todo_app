@@ -1,8 +1,8 @@
-import { Auth } from './modules';
+import { AuthModule } from './modules';
 
 class App {
   constructor() {
-    this.auth = new Auth();
+    new AuthModule();
   }
 }
 

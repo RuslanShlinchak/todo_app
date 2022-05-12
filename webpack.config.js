@@ -55,7 +55,7 @@ module.exports = {
     minimize: !!isProd,
   },
   devServer: {
-    port: 8081,
+    port: 3001,
     compress: true,
   },
 };
