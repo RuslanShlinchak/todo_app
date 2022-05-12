@@ -1,5 +1,7 @@
 import { Http } from '../services';
 import { AuthView } from '../views';
+import { store } from '../services';
+import { User } from '../entities';
  
 class AuthModule {
   constructor() {
@@ -16,6 +18,13 @@ class AuthModule {
       url: '/user/login',
       body: reqBody,
     });
+    store.setState('user', new User({
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      age: user.age,
+      token
+    }));
   }
 
   async register(e) {
@@ -25,6 +34,13 @@ class AuthModule {
       url: '/user/register',
       body: reqBody,
     });
+    store.setState('user', new User({
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      age: user.age,
+      token
+    }));
   }
 }
 

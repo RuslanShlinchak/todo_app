@@ -3,12 +3,14 @@ class User {
     id,
     name,
     email,
-    age
+    age,
+    token
   }) {
     this.id = id;
     this.name = name;
     this.email = email;
     this.age = age;
+    this.token = token;
   }
 }
 

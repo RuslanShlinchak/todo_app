@@ -1,5 +1,6 @@
 import { AUTH_SECTION_ID, SIGN_IN_FORM_ID, SIGN_IN_SCREEN_ID, REGISTER_FORM_ID, REGISTER_SCREEN_ID, REGISTER_LINK_ID } from '../constants';
 import { SIGNIN_TEMPLATE, REGISTER_TEMPLATE } from '../templates';
+import { store } from '../services';
 
 const VIEWS_MAP = {
   [SIGN_IN_SCREEN_ID]: SIGNIN_TEMPLATE,
@@ -17,6 +18,7 @@ class AuthView {
     this.callbacks = callbacks;
     this.activeScreen = SIGN_IN_SCREEN_ID;
     this.root = document.getElementById(AUTH_SECTION_ID);
+    store.subscribe(this);
     this.init();
   }
 
