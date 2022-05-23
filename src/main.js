@@ -1,11 +1,5 @@
+import 'tw-elements';
 import './styles/main.scss';
+import App from './scripts/App';
 
-const x = 0;
-
-async function test() {
-  await 1;
-}
-
-test();
-
-console.log(3);
+const app = new App();
