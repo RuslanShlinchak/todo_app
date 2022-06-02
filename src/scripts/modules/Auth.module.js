@@ -14,32 +14,28 @@ class AuthModule {
   async signIn(e) {
     e.preventDefault();
     const reqBody = AuthView.getRequestBodyFromForm(this.authView.signInFormEl);
-    const { user, token } = await Http.post({
-      url: '/user/login',
+    const { user, accessToken } = await Http.post({
+      url: '/signin',
       body: reqBody,
     });
     store.setState('user', new User({
-      id: user._id,
-      name: user.name,
+      id: user.id,
       email: user.email,
-      age: user.age,
-      token
+      token: accessToken
     }));
   }
 
   async register(e) {
     e.preventDefault();
     const reqBody = AuthView.getRequestBodyFromForm(this.authView.registerFormEl);
-    const { user, token } = await Http.post({
-      url: '/user/register',
+    const { user, accessToken } = await Http.post({
+      url: '/signup',
       body: reqBody,
     });
     store.setState('user', new User({
       id: user._id,
-      name: user.name,
       email: user.email,
-      age: user.age,
-      token
+      token: accessToken
     }));
   }
 }
